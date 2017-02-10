@@ -13,3 +13,9 @@ service 'apache2' do
 	service_name 'httpd'
 	action [:enable, :start]
 end
+
+firewalld_service 'apache2' do
+	firewalld_service_name 'httpd'
+	aciton :add
+	zone 'public'
+end
